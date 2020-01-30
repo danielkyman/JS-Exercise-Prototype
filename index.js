@@ -88,13 +88,14 @@ Car.prototype.fill = function(gallons){
 };
 
 Car.prototype.drive = function(distance){
-  if(this.tank > 0){
     this.odometer += distance;
     this.tank -= (distance * (1 / this.milesPerGallon));
-  }else if(this.tank <= 0){
-    return `I ran out of feul at ${this.odometer} miles!`;
-  }
-}
+    if(this.tank <= 0){
+    return `I ran out of fuel at ${this.odometer} miles!`;
+    };
+};
+
+
 
 /*
   TASK 3
@@ -121,10 +122,11 @@ Baby.prototype.play = function(){
   TASK 4
 
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  what is the calling object ? 
+  1. Is the function called by using the 'new' key word ?
+  2. is the function called by using either call(), apply(), or bind ()?
+  3. is the function thats being called a method or a function within an object ?
+  4. finally, is the function called within the global scope which would then return the window ...
 */
 
 
